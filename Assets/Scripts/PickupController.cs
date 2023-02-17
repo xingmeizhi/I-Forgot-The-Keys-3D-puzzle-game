@@ -8,6 +8,9 @@ public class PickupController : MonoBehaviour
 
     public GameObject hintmessage;
     public float pickupRange = 2.0f;
+    public GameObject win;
+    private bool flag = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,12 +40,15 @@ public class PickupController : MonoBehaviour
             hintmessage.SetActive(true);
             Destroy(hintmessage, 3);
         }
-        else
+        else if (pickObj.CompareTag("key"))
         {
-            if (pickObj.GetComponent<Rigidbody>())
-            {
-                Destroy(pickObj);
-            }
+            Destroy(pickObj);
+            flag = true;
         }
-    }
+        else if (pickObj.CompareTag("exit") & flag == true)
+        {
+            win.SetActive(true);
+        }
+       }
+    
 }
