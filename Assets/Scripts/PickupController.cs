@@ -5,6 +5,8 @@ using UnityEngine;
 public class PickupController : MonoBehaviour
 {
 
+
+    public GameObject hintmessage;
     public float pickupRange = 2.0f;
     // Start is called before the first frame update
     void Start()
@@ -27,9 +29,20 @@ public class PickupController : MonoBehaviour
 
     void PickupObject(GameObject pickObj)
     {
-        if (pickObj.GetComponent<Rigidbody>())
+       
+
+        if (pickObj.CompareTag("hint"))
         {
             Destroy(pickObj);
+            hintmessage.SetActive(true);
+            Destroy(hintmessage, 3);
+        }
+        else
+        {
+            if (pickObj.GetComponent<Rigidbody>())
+            {
+                Destroy(pickObj);
+            }
         }
     }
 }
