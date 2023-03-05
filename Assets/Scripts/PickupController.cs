@@ -49,6 +49,6 @@ public class PickupController : MonoBehaviour
         {
             win.SetActive(true);
         }
-       }
+    }
     
 }
