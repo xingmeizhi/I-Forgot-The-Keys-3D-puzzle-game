@@ -4,9 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - hint
   - exit
-  - key
+  - pickup
   layers:
   - Default
   - TransparentFX
