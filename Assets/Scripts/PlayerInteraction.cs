@@ -25,9 +25,16 @@ public class PlayerInteraction : MonoBehaviour
                         var pickupScript = hit.transform.gameObject.GetComponent<InteractableScript>();
                         pickupScript.PickedUp();
                     }
-                    //TODO: add lock interaction
-                    //TODO: add puzzle interaction
-                    //TODO: add exit interaction
+                    if(hit.collider.CompareTag("lock") || hit.collider.CompareTag("exit")){
+                        Debug.Log("lock");
+                        var lockScript = hit.transform.gameObject.GetComponent<LockScript>();
+                        lockScript.InteractedWith(FindObjectOfType<InventorySystemScript>().GetCurrentObject());
+                    }
+                    if(hit.collider.CompareTag("puzzle")){
+                        Debug.Log("puzzle");
+                        var puzzleScript = hit.transform.gameObject.GetComponent<PuzzleScript>();
+                        puzzleScript.InteractedWith();
+                    }
             }
         }
     }

@@ -6,6 +6,8 @@ TagManager:
   tags:
   - exit
   - pickup
+  - lock
+  - puzzle
   layers:
   - Default
   - TransparentFX

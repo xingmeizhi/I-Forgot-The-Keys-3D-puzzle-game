@@ -46,7 +46,9 @@ public class InventorySystemScript : MonoBehaviour
         //Possible Implementations: remove item from inventory
     }
 
-    //TODO: way to access current object by other scripts - for opening locks, specifically
+    public GameObject GetCurrentObject(){
+        return items[currentObject];
+    }
 
     public bool addToInventory(GameObject item, Sprite icon){
         for(int i = 0; i < 5; i++){
