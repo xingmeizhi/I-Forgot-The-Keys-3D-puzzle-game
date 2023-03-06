@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour
 {
+    public float pickupRange = 5.0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +15,12 @@ public class PlayerInteraction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetMouseButtonDown(0))
+        {
+            if (Physics.Raycast(transform.position,
+                transform.TransformDirection(Vector3.forward), out RaycastHit hit, pickupRange)) {
+                    //interact with object
+            }
+        }
     }
 }
