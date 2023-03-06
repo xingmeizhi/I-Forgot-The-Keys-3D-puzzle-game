@@ -25,6 +25,7 @@ public class LockScript : MonoBehaviour
         } else if(obj == null){
             //nothing happens
         } else if(obj == key){
+            FindObjectOfType<InventorySystemScript>().removeFromInventory(obj);
             Open();
         }
     }
@@ -36,6 +37,7 @@ public class LockScript : MonoBehaviour
             i.SetActive(true);
         }
         if(gameObject.tag == "exit"){
+            Debug.Log("Won!");
             //TODO: add something to end current level and start next level
             //win condition
         }
