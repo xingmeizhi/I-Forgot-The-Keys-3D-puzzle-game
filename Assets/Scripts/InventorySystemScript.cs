@@ -43,6 +43,13 @@ public class InventorySystemScript : MonoBehaviour
             }
         }
 
+        if(Input.GetKeyDown(KeyCode.Delete)){
+            if(items[currentObject] != null){
+                items[currentObject].GetComponent<InteractableScript>().PutDown();
+                removeFromInventory(items[currentObject]);
+            }
+        }
+
         //Possible Implementations: remove item from inventory
     }
 

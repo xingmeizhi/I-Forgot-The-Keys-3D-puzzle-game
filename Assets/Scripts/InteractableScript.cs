@@ -35,4 +35,9 @@ public class InteractableScript : MonoBehaviour
         
         //TODO: Later replace with an image for canvas which is the icon/clue the interactable gives
     }
+
+    public void PutDown(){
+        gameObject.SetActive(true);
+        Debug.Log("Removed from inventory");
+    }
 }
