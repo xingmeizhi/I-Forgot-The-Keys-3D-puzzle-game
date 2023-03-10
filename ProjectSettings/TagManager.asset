@@ -8,6 +8,10 @@ TagManager:
   - pickup
   - lock
   - puzzle
+  - hint
+  - key
+  - porte
+  - fridge
   layers:
   - Default
   - TransparentFX
