@@ -40,6 +40,8 @@ public class LockScript : MonoBehaviour
             Debug.Log("Won!");
             //TODO: add something to end current level and start next level
             //win condition
+
+            FindObjectOfType<LevelManager>().LevelBeat();
         }
     }
 }
