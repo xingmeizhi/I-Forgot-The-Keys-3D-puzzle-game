@@ -8,6 +8,9 @@ public class PuzzleScript : MonoBehaviour
     public GameObject[] inside; //items behind locked item
     public bool solved = false;
 
+    public Animator animator;
+    public AudioSource dooraudio;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,8 +33,8 @@ public class PuzzleScript : MonoBehaviour
 
     public void Solved(){
         solved = true;
-        //TODO: Add animation for opening in here, possibly in seperate script
-        //replace itself with open area
+        animator.Play("doorOpen");
+        dooraudio.Play();
 
         foreach (GameObject i in inside){
             i.SetActive(true);

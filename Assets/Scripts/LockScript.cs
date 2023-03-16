@@ -7,6 +7,12 @@ public class LockScript : MonoBehaviour
     public GameObject key; //the key to unlock the lock
     public GameObject[] inside; //items behind locked item
 
+    public Animator animator;
+
+
+    public AudioSource openaudio;
+    public AudioSource closeaudio;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +26,7 @@ public class LockScript : MonoBehaviour
     }
 
     public void InteractedWith(GameObject obj){
-        if(key == null){
+        if(!key.activeInHierarchy){
             Open();
         } else if(obj == null){
             //nothing happens
@@ -33,9 +39,12 @@ public class LockScript : MonoBehaviour
     void Open(){
         //TODO: play animation for opening item here, possibly from seperate script
         //replace itself with open area
+        playOpen();
+
         foreach (GameObject i in inside){
             i.SetActive(true);
         }
+
         if(gameObject.tag == "exit"){
             Debug.Log("Won!");
             //TODO: add something to end current level and start next level
@@ -43,5 +52,17 @@ public class LockScript : MonoBehaviour
 
             FindObjectOfType<LevelManager>().LevelBeat();
         }
+    }
+
+    private void playOpen()
+    {
+        animator.Play("CupBoardOpen");
+        openaudio.Play();
+    }
+
+    private void playClose()
+    {
+        animator.Play("CupBoardClose");
+        closeaudio.Play();
     }
 }

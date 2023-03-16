@@ -30,15 +30,11 @@ public class FridgeAnimation : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && IsPlayerNear() && open)
         {
-            animFridge.Play("FridgeClose");
-            open = false;
-            Fridgecloseaudio.Play();
+            playClose();
         }
         else if (Input.GetKeyDown(KeyCode.E) && IsPlayerNear() && !open)
         {
-            animFridge.Play("FridgeOpen");
-            open = true;
-            Fridgeopenaudio.Play();
+            playOpen();
         }
 
         bool IsPlayerNear()
@@ -55,5 +51,19 @@ public class FridgeAnimation : MonoBehaviour
         }
 
 
+    }
+
+    public void playOpen()
+    {
+        animFridge.Play("FridgeOpen");
+        open = true;
+        Fridgeopenaudio.Play();
+    }
+
+    public void playClose()
+    {
+        animFridge.Play("FridgeClose");
+        open = false;
+        Fridgecloseaudio.Play();
     }
 }
