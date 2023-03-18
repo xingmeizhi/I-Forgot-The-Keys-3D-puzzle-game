@@ -73,7 +73,7 @@ MonoBehaviour:
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
-  m_LastLoadedLayoutName: 2 by 3
+  m_LastLoadedLayoutName: 
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 24023
+  controlID: 76
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 23988
+  controlID: 77
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -166,8 +166,8 @@ MonoBehaviour:
     y: 0
     width: 1210
     height: 666
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -221,8 +221,8 @@ MonoBehaviour:
     y: 0
     width: 411
     height: 1299
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -273,8 +273,8 @@ MonoBehaviour:
     y: 0
     width: 572
     height: 1299
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -630,9 +630,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 31.214022, y: 9.906021, z: 45.85362}
+    m_Target: {x: 25.931282, y: 11.230136, z: 53.039806}
     speed: 2
-    m_Value: {x: 31.214022, y: 9.906021, z: 45.85362}
+    m_Value: {x: 25.931282, y: 11.230136, z: 53.039806}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -679,20 +679,20 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.09060998, y: -0.1517663, z: 0.0139729, w: 0.9841575}
+    m_Target: {x: -0.0032425974, y: 0.20023447, z: -0.00066350563, w: -0.97974646}
     speed: 2
-    m_Value: {x: 0.09060979, y: -0.15176597, z: 0.01397287, w: 0.9841554}
+    m_Value: {x: -0.0061300485, y: 0.23682122, z: -0.001495085, w: -0.97153276}
   m_Size:
-    m_Target: 2.652433
+    m_Target: 2.1393178
     speed: 2
-    m_Value: 2.652433
+    m_Value: 2.1393178
   m_Ortho:
     m_Target: 0
     speed: 2
     m_Value: 0
   m_CameraSettings:
-    m_Speed: 1
-    m_SpeedNormalized: 0.5
+    m_Speed: 0.9453
+    m_SpeedNormalized: 0.47
     m_SpeedMin: 0.01
     m_SpeedMax: 2
     m_EasingEnabled: 1
@@ -883,7 +883,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 0a7affff8a7dffffba7dffffc47dffff6281ffff1a84ffff1e89ffff9e8cffff568fffff4292ffff4695ffffd6dbffffe0dbffff9adeffff6ae1ffff22e4ffffd8e6ffff90e9ffff46ecfffffeeeffffbaf1ffff70f4ffff26f7ffff9e720000b2cf000048d10000f8d10000
+      m_ExpandedIDs: 22e1ffffaae9ffff34fbffffe05e0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -948,7 +948,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Sound
+    - Assets/SnowQ/Appliances/Toaster/Prefab
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 0
@@ -963,7 +963,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 0a620000
     m_LastClickedID: 25098
-    m_ExpandedIDs: ffffffff000000000a6200000c6200000e620000106200001262000014620000066300001663000010f2000012f2000014f20000ffffff7f
+    m_ExpandedIDs: 00000000c6630000c8630000ca630000cc630000ce630000d0630000d2630000d4630000d6630000d8630000da630000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -991,21 +991,21 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff000000000a6200000c6200000e620000106200001262000014620000066300001663000010f2000012f2000014f20000ffffff7f
+    m_ExpandedIDs: ffffffff00000000c6630000c8630000cc630000ce630000d4630000d6630000d8630000da6300008665000092650000ba790000bc7900004e7f0000587f00005a7f00005c7f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: prf_lock_01
+      m_OriginalName: prf_lock_01
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 25978
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 10}
     m_SearchString: 
