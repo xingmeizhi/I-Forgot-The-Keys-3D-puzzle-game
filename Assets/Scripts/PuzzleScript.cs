@@ -33,8 +33,12 @@ public class PuzzleScript : MonoBehaviour
 
     public void Solved(){
         solved = true;
-        animator.Play("doorOpen");
-        dooraudio.Play();
+        if(animator != null){
+            animator.Play("doorOpen");
+        }
+        if(dooraudio != null){
+            dooraudio.Play();
+        }
 
         foreach (GameObject i in inside){
             i.SetActive(true);

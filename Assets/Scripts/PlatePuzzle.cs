@@ -9,7 +9,7 @@ public class PlatePuzzle : MonoBehaviour
     public Button[] plates; //add plate texture to buttons
 
 
-    int[] pressed = {0, 0, 0, 0, 0};
+    public int[] pressed = {0, 0, 0, 0, 0};
     int index;
     // Start is called before the first frame update
     void Start()
@@ -35,6 +35,7 @@ public class PlatePuzzle : MonoBehaviour
     }
 
     void Solved(){
+        Debug.Log("hi");
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         puzzle.GetComponent<PuzzleScript>().Solved();
@@ -53,6 +54,7 @@ public class PlatePuzzle : MonoBehaviour
                 for(int i = 0; i < 5; i++){
                     pressed[i] = 0;
                 }
+                index = 0;
             }
         }
     }
