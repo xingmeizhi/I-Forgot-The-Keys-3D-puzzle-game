@@ -8,6 +8,8 @@ public class InteractableScript : MonoBehaviour
 
     public Sprite icon; //icon for item
     public string itemInfo; //later replace with UI
+    public Sprite itemShow;
+    public GameObject toShowItem;
 
     // Start is called before the first frame update
     void Start()
@@ -33,7 +35,8 @@ public class InteractableScript : MonoBehaviour
     public void Selected(){
         Debug.Log(itemInfo);
         
-        //TODO: Later replace with an image for canvas which is the icon/clue the interactable gives
+        toShowItem.GetComponent<Image>().sprite = itemShow;
+        toShowItem.SetActive(true);
     }
 
     public void PutDown(){

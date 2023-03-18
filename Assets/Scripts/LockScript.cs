@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LockScript : MonoBehaviour
 {
-    public GameObject key; //the key to unlock the lock
+    public GameObject keyLock; //the key to unlock the lock
     public GameObject[] inside; //items behind locked item
 
     public Animator animator;
@@ -26,19 +26,18 @@ public class LockScript : MonoBehaviour
     }
 
     public void InteractedWith(GameObject obj){
-        if(!key.activeInHierarchy){
+        /*if(keyLock != null){ //if it's automatically unlocked - TODO: move to script when it matters
+            Debug.Log("nokey");
             Open();
-        } else if(obj == null){
+        } else */if(obj == null){
             //nothing happens
-        } else if(obj == key){
+        } else if(obj == keyLock){
             FindObjectOfType<InventorySystemScript>().removeFromInventory(obj);
             Open();
         }
     }
 
-    void Open(){
-        //TODO: play animation for opening item here, possibly from seperate script
-        //replace itself with open area
+    void Open(){ 
         playOpen();
 
         foreach (GameObject i in inside){

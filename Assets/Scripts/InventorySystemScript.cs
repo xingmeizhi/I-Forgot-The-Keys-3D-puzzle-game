@@ -5,8 +5,10 @@ using UnityEngine.UI;
 
 public class InventorySystemScript : MonoBehaviour
 {
+    public GameObject highlight;
     public GameObject[] items = {null, null, null, null, null}; 
-    public Image[] icons;
+    public GameObject[] icons;
+    public GameObject itemShow;
 
     public int currentObject;
     // Start is called before the first frame update
@@ -21,7 +23,7 @@ public class InventorySystemScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.K)){ // TODO : Add highlights to inventory system, if time
+        if(Input.GetKeyDown(KeyCode.K)){ 
             currentObject++;
             if(currentObject >= 5){
                 currentObject = 0;
@@ -34,7 +36,9 @@ public class InventorySystemScript : MonoBehaviour
             }
         }
 
-        //TODO: Change Highlights of inventory system here
+        if(Input.GetKeyDown(KeyCode.Q)){
+            itemShow.SetActive(false);
+        }
 
 
         if(Input.GetKeyDown(KeyCode.Return)){
@@ -49,6 +53,8 @@ public class InventorySystemScript : MonoBehaviour
                 removeFromInventory(items[currentObject]);
             }
         }
+
+        highlight.transform.position = icons[currentObject].transform.position;
     }
 
     public GameObject GetCurrentObject(){
@@ -59,7 +65,7 @@ public class InventorySystemScript : MonoBehaviour
         for(int i = 0; i < 5; i++){
             if(items[i] == null){
                 items[i] = item;
-                icons[i].sprite = icon;
+                icons[i].GetComponent<Image>().sprite = icon;
                 return true;
             }
         }
@@ -70,7 +76,7 @@ public class InventorySystemScript : MonoBehaviour
         for(int i = 0; i < 5; i++){
             if(items[i] == item){
                 items[i] = null;
-                icons[i].sprite = null;
+                icons[i].GetComponent<Image>().sprite = null;
             }
         }
     }
