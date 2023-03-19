@@ -9,9 +9,15 @@ public class LockScript : MonoBehaviour
 
     public Animator animator;
 
-
+    public AnimationClip openClip;
+    public AnimationClip closeClip;
+    
     public AudioSource openaudio;
     public AudioSource closeaudio;
+
+    public bool isFinalLock;
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -34,34 +40,35 @@ public class LockScript : MonoBehaviour
         } else if(obj == keyLock){
             FindObjectOfType<InventorySystemScript>().removeFromInventory(obj);
             Open();
-        }
+        } 
     }
 
-    void Open(){ 
+    void Open(){
+
         playOpen();
 
         foreach (GameObject i in inside){
             i.SetActive(true);
         }
 
-        if(gameObject.tag == "exit"){
-            Debug.Log("Won!");
-            //TODO: add something to end current level and start next level
-            //win condition
-
+        if (isFinalLock)
+        {
             FindObjectOfType<LevelManager>().LevelBeat();
         }
+
+
     }
+    
 
     private void playOpen()
     {
-        animator.Play("CupBoardOpen");
+        animator.Play(openClip.name);
         openaudio.Play();
     }
 
     private void playClose()
     {
-        animator.Play("CupBoardClose");
+        animator.Play(closeClip.name);
         closeaudio.Play();
     }
 }
