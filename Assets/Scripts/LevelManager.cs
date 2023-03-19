@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
 
-    public float levelDuration = 60.0f;
+    public float levelDuration = 180.0f;
     public Text timerText;
     public Text gameText;
     public string nextLevel;
