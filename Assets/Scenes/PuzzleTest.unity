@@ -870,7 +870,7 @@ MonoBehaviour:
   inside:
   - {fileID: 900740971}
   solved: 0
-  player: {fileID: 0}
+  player: {fileID: 963194225}
 --- !u!1 &178368128
 GameObject:
   m_ObjectHideFlags: 0
@@ -3031,7 +3031,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24612
+  m_Name: pb_Mesh25712
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4036,7 +4036,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c67be21592547949acf233c9bc0b464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 25
+  mouseSensitivity: 1000
 --- !u!114 &963194230
 MonoBehaviour:
   m_ObjectHideFlags: 0
