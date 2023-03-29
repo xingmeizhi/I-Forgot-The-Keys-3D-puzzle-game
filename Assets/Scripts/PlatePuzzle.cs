@@ -30,6 +30,7 @@ public class PlatePuzzle : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Q)){
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
+            GameObject.FindGameObjectWithTag("MainCamera").GetComponent<PlayerInteraction>().ChangeSolvingPuzzle(false);
             gameObject.SetActive(false);
         }
     }

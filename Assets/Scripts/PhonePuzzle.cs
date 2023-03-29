@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-        
 
-public class OvenPuzzle : MonoBehaviour
+public class PhonePuzzle : MonoBehaviour
 {
     public GameObject puzzle;
     
@@ -14,10 +13,17 @@ public class OvenPuzzle : MonoBehaviour
 
 
     Queue<int> nums = new Queue<int>();
+    int[] answer = {3, 0, 0, 7, 7, 3, 9, 8, 3, 8}; //phone numbers too large for ints
     // Start is called before the first frame update
     void Start()
     {
         nums.Clear(); //start with 4 0s
+        nums.Enqueue(0);
+        nums.Enqueue(0);
+        nums.Enqueue(0);
+        nums.Enqueue(0);
+        nums.Enqueue(0);
+        nums.Enqueue(0);
         nums.Enqueue(0);
         nums.Enqueue(0);
         nums.Enqueue(0);
@@ -27,6 +33,11 @@ public class OvenPuzzle : MonoBehaviour
             Button btn = b.GetComponent<Button>();
             btn.onClick.AddListener(delegate {ButtonClicked(btn.name);});
         }
+    }
+
+    void AddNumber(int n){ // keeps the number amount
+        nums.Enqueue(n);
+        nums.Dequeue();
     }
 
     // Update is called once per frame
@@ -41,27 +52,22 @@ public class OvenPuzzle : MonoBehaviour
         DisplayNumbers();
     }
 
-    void AddNumber(int n){ // keeps the number amount at 4
-        nums.Enqueue(n);
-        nums.Dequeue();
-    }
-
-    //display numbers, check if solved
     void DisplayNumbers(){
         int index = 0;
         string text = "";
-        int num = 0;
+        bool win = true;
         foreach(int i in nums){
             text = text + i;
-            if(index == 1){
-                text = text + ":";
+            if(index == 2 || index == 5){
+                text = text + "-";
             }
-            num = num * 10;
-            num = num + i;
+            if(i != answer[index]){
+                win = false;
+            }
             index++;
         }
         t.text = text;
-        if(num == 356){
+        if(win){
             Solved();
         }
     }

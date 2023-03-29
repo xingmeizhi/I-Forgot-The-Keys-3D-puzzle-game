@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311915, g: 0.3807396, b: 0.35872662, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -870,6 +870,7 @@ MonoBehaviour:
   inside:
   - {fileID: 900740971}
   solved: 0
+  player: {fileID: 0}
 --- !u!1 &178368128
 GameObject:
   m_ObjectHideFlags: 0
@@ -5463,6 +5464,7 @@ MonoBehaviour:
   inside:
   - {fileID: 900740971}
   solved: 0
+  player: {fileID: 0}
 --- !u!65 &1363519271
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5712,7 +5714,7 @@ GameObject:
   - component: {fileID: 1451837904}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8686,6 +8688,7 @@ MonoBehaviour:
   inside:
   - {fileID: 1625168416}
   solved: 0
+  player: {fileID: 0}
 --- !u!1001 &8488545550778825431
 PrefabInstance:
   m_ObjectHideFlags: 0

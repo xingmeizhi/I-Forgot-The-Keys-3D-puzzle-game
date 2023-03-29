@@ -62,13 +62,17 @@ public class LockScript : MonoBehaviour
 
     private void playOpen()
     {
-        animator.Play(openClip.name);
-        openaudio.Play();
+        if(animator != null){
+            animator.Play(openClip.name);
+            openaudio.Play();
+        }
     }
 
     private void playClose()
     {
-        animator.Play(closeClip.name);
-        closeaudio.Play();
+        if(animator != null){
+            animator.Play(closeClip.name);
+            closeaudio.Play();
+        }
     }
 }

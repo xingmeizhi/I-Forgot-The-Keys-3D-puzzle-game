@@ -12,6 +12,7 @@ TagManager:
   - key
   - porte
   - fridge
+  - display
   layers:
   - Default
   - TransparentFX

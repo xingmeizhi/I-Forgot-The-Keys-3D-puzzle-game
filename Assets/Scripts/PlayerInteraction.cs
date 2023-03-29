@@ -5,17 +5,18 @@ using UnityEngine;
 public class PlayerInteraction : MonoBehaviour
 {
     public float pickupRange = 10.0f;
+    public static bool SolvingPuzzle = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        SolvingPuzzle = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Fire1"))
+        if(Input.GetButtonDown("Fire1") && !SolvingPuzzle)
         {
             if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, pickupRange)) {
                     //interact with object
@@ -35,7 +36,16 @@ public class PlayerInteraction : MonoBehaviour
                         var puzzleScript = hit.transform.gameObject.GetComponent<PuzzleScript>();
                         puzzleScript.InteractedWith();
                     }
+                    if(hit.collider.CompareTag("display")){
+                        Debug.Log("display");
+                        var displayScript = hit.transform.gameObject.GetComponent<DisplayImage>();
+                        displayScript.InteractedWith();
+                    }
             }
         }
+    }
+
+    public void ChangeSolvingPuzzle(bool change){
+        SolvingPuzzle = change;
     }
 }
