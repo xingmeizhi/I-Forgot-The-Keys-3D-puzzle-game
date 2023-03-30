@@ -9,8 +9,11 @@ public class PuzzleScript : MonoBehaviour
     public bool solved = false;
     public GameObject player;
 
-    //public Animator animator;
-    //public AudioSource dooraudio;
+    public Animator animator;
+
+    public AnimationClip clip;
+
+    public AudioSource solveAudio;
 
     // Start is called before the first frame update
     void Start()
@@ -35,14 +38,23 @@ public class PuzzleScript : MonoBehaviour
     }
 
     public void Solved(){
+
         solved = true;
+        
+        if(animator != null)
+        {
+            Debug.Log("Playing animation: " + clip.name);
+            animator.Play(clip.name);
+        }
+        if(solveAudio != null)
+        {
+            Debug.Log("Playing solve audio");
+            solveAudio.Play();
+        }
+
         player.GetComponent<PlayerInteraction>().ChangeSolvingPuzzle(false);
-        //if(animator != null){
-        //    animator.Play("doorOpen");
-        //}
-        //if(dooraudio != null){
-        //    dooraudio.Play();
-        //}
+
+        
 
         foreach (GameObject i in inside){
             i.SetActive(true);

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.3587269, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -258,6 +258,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 38251078}
   m_CullTransparentMesh: 1
+--- !u!1 &47417004
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 47417006}
+  - component: {fileID: 47417005}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &47417005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 47417004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8a0e63198c84844db5fd3f6c8ff18d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &47417006
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 47417004}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 28.546606, y: 9.089779, z: 48.07752}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 25
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!850595691 &66324534
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -2247,6 +2291,14 @@ PrefabInstance:
       propertyPath: toShowItem
       value: 
       objectReference: {fileID: 702329736}
+    - target: {fileID: 516162554, guid: 00931e932c93cef48ae2d8cc87408c66, type: 3}
+      propertyPath: pickupSound
+      value: 
+      objectReference: {fileID: 8300000, guid: beb04eb0252d682418a9fdf3ce9ed7fd, type: 3}
+    - target: {fileID: 961968358, guid: 00931e932c93cef48ae2d8cc87408c66, type: 3}
+      propertyPath: pickupSound
+      value: 
+      objectReference: {fileID: 8300000, guid: beb04eb0252d682418a9fdf3ce9ed7fd, type: 3}
     - target: {fileID: 1884156196641044, guid: 00931e932c93cef48ae2d8cc87408c66, type: 3}
       propertyPath: m_Name
       value: Notepad
@@ -3031,7 +3083,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh25712
+  m_Name: pb_Mesh81486
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3645,6 +3697,7 @@ MonoBehaviour:
   itemInfo: Key For Exit
   itemShow: {fileID: 21300000, guid: 02757bb5523394cfb951c5fc1f1515b0, type: 3}
   toShowItem: {fileID: 702329736}
+  pickupSound: {fileID: 8300000, guid: beb04eb0252d682418a9fdf3ce9ed7fd, type: 3}
 --- !u!65 &900740977
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3888,6 +3941,14 @@ PrefabInstance:
       propertyPath: toShowItem
       value: 
       objectReference: {fileID: 702329736}
+    - target: {fileID: 516162554, guid: 00931e932c93cef48ae2d8cc87408c66, type: 3}
+      propertyPath: pickupSound
+      value: 
+      objectReference: {fileID: 8300000, guid: beb04eb0252d682418a9fdf3ce9ed7fd, type: 3}
+    - target: {fileID: 961968358, guid: 00931e932c93cef48ae2d8cc87408c66, type: 3}
+      propertyPath: pickupSound
+      value: 
+      objectReference: {fileID: 8300000, guid: beb04eb0252d682418a9fdf3ce9ed7fd, type: 3}
     - target: {fileID: 1884156196641044, guid: 00931e932c93cef48ae2d8cc87408c66, type: 3}
       propertyPath: m_Name
       value: Notepad (2)
@@ -6252,6 +6313,7 @@ MonoBehaviour:
   itemInfo: Key for Cupboard
   itemShow: {fileID: 21300000, guid: 02757bb5523394cfb951c5fc1f1515b0, type: 3}
   toShowItem: {fileID: 702329736}
+  pickupSound: {fileID: 8300000, guid: beb04eb0252d682418a9fdf3ce9ed7fd, type: 3}
 --- !u!65 &1625168422
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8062,6 +8124,14 @@ PrefabInstance:
       propertyPath: toShowItem
       value: 
       objectReference: {fileID: 702329736}
+    - target: {fileID: 516162554, guid: 00931e932c93cef48ae2d8cc87408c66, type: 3}
+      propertyPath: pickupSound
+      value: 
+      objectReference: {fileID: 8300000, guid: beb04eb0252d682418a9fdf3ce9ed7fd, type: 3}
+    - target: {fileID: 961968358, guid: 00931e932c93cef48ae2d8cc87408c66, type: 3}
+      propertyPath: pickupSound
+      value: 
+      objectReference: {fileID: 8300000, guid: beb04eb0252d682418a9fdf3ce9ed7fd, type: 3}
     - target: {fileID: 1884156196641044, guid: 00931e932c93cef48ae2d8cc87408c66, type: 3}
       propertyPath: m_Name
       value: Notepad (1)
@@ -8150,6 +8220,7 @@ MonoBehaviour:
   itemInfo: 56
   itemShow: {fileID: 0}
   toShowItem: {fileID: 0}
+  pickupSound: {fileID: 8300000, guid: beb04eb0252d682418a9fdf3ce9ed7fd, type: 3}
 --- !u!1 &2119143368
 GameObject:
   m_ObjectHideFlags: 0

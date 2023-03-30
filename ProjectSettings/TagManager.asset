@@ -13,6 +13,8 @@ TagManager:
   - porte
   - fridge
   - display
+  - cat
+  - WanderPoint
   layers:
   - Default
   - TransparentFX
