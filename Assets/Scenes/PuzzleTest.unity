@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311915, g: 0.3807396, b: 0.35872662, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.3587269, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8197,7 +8197,7 @@ MonoBehaviour:
   levelDuration: 180
   timerText: {fileID: 1970373423}
   gameText: {fileID: 752294143}
-  nextLevel: 
+  nextLevel: Level2
 --- !u!1001 &828401515277911847
 PrefabInstance:
   m_ObjectHideFlags: 0
