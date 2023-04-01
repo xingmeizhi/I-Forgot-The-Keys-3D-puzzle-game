@@ -14,6 +14,9 @@ public class LevelManager : MonoBehaviour
 
     public static bool isGameOver = false;
 
+    private AudioSource audioSource;
+    public AudioClip bgm;
+
     float countDown;
 
     // Start is called before the first frame update
@@ -21,6 +24,9 @@ public class LevelManager : MonoBehaviour
     {
         isGameOver = false;
         countDown = levelDuration;
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = bgm;
+        audioSource.Play();
         SetTimerText();
     }
 
@@ -54,6 +60,7 @@ public class LevelManager : MonoBehaviour
         gameText.text = "GAME OVER";
         gameText.gameObject.SetActive(true);
         gameText.color = Color.red;
+        audioSource.Stop();
 
 
         Invoke("LoadCurrentLevel", 2);
@@ -66,7 +73,7 @@ public class LevelManager : MonoBehaviour
         gameText.text = "YOU ESCAPE";
         gameText.color = Color.green;
         gameText.gameObject.SetActive(true);
-
+        audioSource.Stop();
 
         if (!string.IsNullOrEmpty(nextLevel))
         {
@@ -78,11 +85,13 @@ public class LevelManager : MonoBehaviour
 
     void LoadNextLevel()
     {
+        audioSource.Play();
         SceneManager.LoadScene(nextLevel);
     }
 
     void LoadCurrentLevel()
     {
+        audioSource.Play();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
