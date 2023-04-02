@@ -15,6 +15,7 @@ TagManager:
   - display
   - cat
   - WanderPoint
+  - puzzlewithcat
   layers:
   - Default
   - TransparentFX

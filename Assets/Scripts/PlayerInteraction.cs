@@ -41,6 +41,12 @@ public class PlayerInteraction : MonoBehaviour
                         var displayScript = hit.transform.gameObject.GetComponent<DisplayImage>();
                         displayScript.InteractedWith();
                     }
+                if (hit.collider.CompareTag("puzzlewithcat"))
+                {
+                    Debug.Log("puzzlewithcat");
+                    var cdPuzzle = hit.transform.gameObject.GetComponent<CDpuzzleonly>();
+                    cdPuzzle.InteractedWith();
+                }
             }
         }
     }

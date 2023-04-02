@@ -9,6 +9,8 @@ public class InventorySystemScript : MonoBehaviour
     public GameObject[] items = {null, null, null, null, null}; 
     public GameObject[] icons;
     public GameObject itemShow;
+    private bool hasPetFood = false;
+
 
     public int currentObject;
     // Start is called before the first frame update
@@ -66,6 +68,13 @@ public class InventorySystemScript : MonoBehaviour
             if(items[i] == null){
                 items[i] = item;
                 icons[i].GetComponent<Image>().sprite = icon;
+
+                if (item.GetComponent<InteractableScript>().isPetFood)
+                {
+                    hasPetFood = true;
+                }
+
+
                 return true;
             }
         }
@@ -77,7 +86,19 @@ public class InventorySystemScript : MonoBehaviour
             if(items[i] == item){
                 items[i] = null;
                 icons[i].GetComponent<Image>().sprite = null;
+
+                if (item.GetComponent<InteractableScript>().isPetFood)
+                {
+                    hasPetFood = false;
+                }
             }
         }
     }
+
+    public bool HasPetFood()
+    {
+        return hasPetFood;
+    }
+
+
 }

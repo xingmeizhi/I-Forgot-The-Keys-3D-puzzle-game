@@ -47,7 +47,7 @@ public class CDPuzzleScript : MonoBehaviour
     void Solved(){
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        puzzle.GetComponent<PuzzleScript>().Solved();
+        puzzle.GetComponent<CDpuzzleonly>().Solved();
         gameObject.SetActive(false);
     }
 

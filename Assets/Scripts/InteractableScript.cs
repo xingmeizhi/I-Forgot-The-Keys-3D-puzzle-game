@@ -11,6 +11,8 @@ public class InteractableScript : MonoBehaviour
     public Sprite itemShow;
     public GameObject toShowItem;
     public AudioClip pickupSound;
+    public bool isPetFood = false;
+
 
     private AudioSource audioSource;
 

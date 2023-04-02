@@ -9,18 +9,25 @@ public class npcAI : MonoBehaviour
     {
         Idle,
         Walk,
-        //Run
+        LeadPlayer,
+        Stop
     }
 
     public AudioClip meow;
     private AudioSource audioSource;
     public float waitTime = 1.0f;
-    public FSMStates currentState;
+    public bool canWander = false;
     public GameObject player;
     public float walkSpeed = 3.5f;
     public float runSpeed = 6.0f;
     public float chaseDistance = 10.0f;
     public float stoppingDistance = 1.0f;
+    public GameObject firstPuzzleDestination;
+
+    private bool reachedDestination = false;
+    private FSMStates currentState;
+    
+
 
     GameObject[] wanderPoints;
     Vector3 nextDestination;
@@ -52,10 +59,14 @@ public class npcAI : MonoBehaviour
             case FSMStates.Walk:
                 UpdateWalkState(distanceToPlayer);
                 break;
-            //case FSMStates.Run:
-            //    UpdateRunState(distanceToPlayer);
-            //    break;
+            case FSMStates.LeadPlayer:
+                UpdateLeadPlayerState();
+                break;
+            case FSMStates.Stop:
+                UpdateStopState();
+                break;
         }
+
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -81,34 +92,51 @@ public class npcAI : MonoBehaviour
     void UpdateIdleState()
     {
         anim.SetInteger("animState", 0);
+        canWander = true;
         currentState = FSMStates.Walk;
     }
 
+
+    void UpdateStopState()
+    {
+        anim.SetInteger("animState", 0);
+        agent.ResetPath();
+    }
+
+
     void UpdateWalkState(float distanceToPlayer)
     {
-        //if (distanceToPlayer <= chaseDistance)
-        //{
-        //    currentState = FSMStates.Run;
-        //    agent.speed = runSpeed;
-        //}
-        //else
-        //{
+        if (currentState != FSMStates.LeadPlayer)
+        {
             currentState = FSMStates.Walk;
             agent.speed = walkSpeed;
-        //}
 
-        if (Vector3.Distance(transform.position, nextDestination) < stoppingDistance)
-        {
-            if (!IsInvoking("FindNextPoint"))
+            if (canWander)
             {
-                Invoke("FindNextPoint", waitTime);
+                if (Vector3.Distance(transform.position, nextDestination) < stoppingDistance)
+                {
+                    if (!IsInvoking("FindNextPoint"))
+                    {
+                        Invoke("FindNextPoint", waitTime);
+                    }
+                }
+            }
+
+            anim.SetInteger("animState", 1);
+            if (canWander)
+            {
+                agent.SetDestination(nextDestination);
             }
         }
-
-
-        anim.SetInteger("animState", 1);
-        agent.SetDestination(nextDestination);
+        if (reachedDestination)
+        {
+            currentState = FSMStates.Stop;
+        }
     }
+
+
+
+
 
     //void UpdateRunState(float distanceToPlayer)
     //{
@@ -129,16 +157,37 @@ public class npcAI : MonoBehaviour
 
     void FindNextPoint()
     {
+        if (currentState == FSMStates.LeadPlayer)
+        {
+            return;
+        }
+
         currentDestinationIndex = Random.Range(0, wanderPoints.Length);
         nextDestination = wanderPoints[currentDestinationIndex].transform.position;
     }
 
-    
-    //TODO: add logic about what should we do when player click the cat
+
+
+
     void CatClicked()
     {
-        PlayMeowSound();
+        InventorySystemScript inventory = FindObjectOfType<InventorySystemScript>();
+        if (inventory.HasPetFood())
+        {
+            GameObject petFood = inventory.GetCurrentObject();
+            if (petFood != null && petFood.GetComponent<InteractableScript>().isPetFood)
+            {
+                currentState = FSMStates.Stop;
+                LeadPlayerToFirstPuzzle();
+                inventory.removeFromInventory(petFood);
+                PlayMeowSound();
+            }
+        }
     }
+
+
+
+
 
     void PlayMeowSound()
     {
@@ -146,5 +195,40 @@ public class npcAI : MonoBehaviour
         {
             audioSource.PlayOneShot(meow);
         }
+    }
+
+    public void LeadPlayerToFirstPuzzle()
+    {
+        canWander = false;
+        reachedDestination = false;
+        currentState = FSMStates.LeadPlayer;
+    }
+
+
+
+
+
+    void UpdateLeadPlayerState()
+    {
+        float distanceToDestination = Vector3.Distance(transform.position, firstPuzzleDestination.transform.position);
+
+        if (distanceToDestination <= stoppingDistance && !reachedDestination)
+        {
+            reachedDestination = true;
+            currentState = FSMStates.Idle;
+            anim.SetInteger("animState", 0);
+            agent.ResetPath();
+        }
+        else if (!reachedDestination)
+        {
+            anim.SetInteger("animState", 1);
+            agent.speed = walkSpeed;
+            agent.SetDestination(firstPuzzleDestination.transform.position);
+        }
+    }
+
+    public bool isCathere()
+    {
+        return reachedDestination;
     }
 }
