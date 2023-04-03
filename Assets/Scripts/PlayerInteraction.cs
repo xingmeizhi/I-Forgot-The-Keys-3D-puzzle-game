@@ -54,4 +54,9 @@ public class PlayerInteraction : MonoBehaviour
     public void ChangeSolvingPuzzle(bool change){
         SolvingPuzzle = change;
     }
+
+    public bool GetSolvingPuzzle(){
+        return SolvingPuzzle;
+    }
 }
+

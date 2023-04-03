@@ -23,16 +23,17 @@ public class MouseLook : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!GameObject.FindGameObjectWithTag("MainCamera").GetComponent<PlayerInteraction>().GetSolvingPuzzle()){
+            float moveX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+            float moveY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
-        float moveX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float moveY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+            playerbody.Rotate(Vector3.up * moveX);
 
-        playerbody.Rotate(Vector3.up * moveX);
-
-        pitch -= moveY;
+            pitch -= moveY;
 
 
-        pitch = Mathf.Clamp(pitch, -90f, 90f);
-        transform.localRotation = Quaternion.Euler(pitch, 0, 0);
+            pitch = Mathf.Clamp(pitch, -90f, 90f);
+            transform.localRotation = Quaternion.Euler(pitch, 0, 0);
+        }
     }
 }
