@@ -54,8 +54,6 @@ public class PuzzleScript : MonoBehaviour
 
         player.GetComponent<PlayerInteraction>().ChangeSolvingPuzzle(false);
 
-        
-
         foreach (GameObject i in inside){
             i.SetActive(true);
         }

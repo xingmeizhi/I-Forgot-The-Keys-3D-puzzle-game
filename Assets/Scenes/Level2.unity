@@ -9267,6 +9267,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5950615685398488589, guid: ff7038b85b4a34466ad8b84d64338b59, type: 3}
+      propertyPath: mouseSensitivity
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 5950615685832573608, guid: ff7038b85b4a34466ad8b84d64338b59, type: 3}
       propertyPath: Fridgeopenaudio
       value: 
