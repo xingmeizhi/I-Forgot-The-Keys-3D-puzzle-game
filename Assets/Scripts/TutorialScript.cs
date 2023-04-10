@@ -7,6 +7,7 @@ public class TutorialScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 0f;
         gameObject.SetActive(true);
     }
 
@@ -14,6 +15,7 @@ public class TutorialScript : MonoBehaviour
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Q)){
+            Time.timeScale = 1f;
             gameObject.SetActive(false);
         }
     }
