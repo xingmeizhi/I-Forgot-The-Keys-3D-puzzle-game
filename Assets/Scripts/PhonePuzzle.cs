@@ -13,7 +13,7 @@ public class PhonePuzzle : MonoBehaviour
 
 
     Queue<int> nums = new Queue<int>();
-    int[] answer = {3, 0, 0, 7, 7, 3, 9, 8, 3, 8}; //phone numbers too large for ints
+    int[] answer = {3, 0, 0, 7, 7, 3, 3, 5, 8, 6}; //phone numbers too large for ints
     // Start is called before the first frame update
     void Start()
     {
