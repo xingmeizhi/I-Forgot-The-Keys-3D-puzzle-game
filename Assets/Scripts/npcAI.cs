@@ -10,11 +10,13 @@ public class npcAI : MonoBehaviour
         Idle,
         Walk,
         LeadPlayer,
-        Stop
+        Stop,
+        Purr
     }
 
+    public AudioClip purr;
     public AudioClip meow;
-    private AudioSource audioSource;
+    public float idleDistance = 1.0f;
     public float waitTime = 1.0f;
     public bool canWander = false;
     public GameObject player;
@@ -24,8 +26,10 @@ public class npcAI : MonoBehaviour
     public float stoppingDistance = 1.0f;
     public GameObject firstPuzzleDestination;
 
+    private AudioSource audioSource;
     private bool reachedDestination = false;
     private FSMStates currentState;
+    private bool isPurr = false;
     
 
 
@@ -51,10 +55,12 @@ public class npcAI : MonoBehaviour
     {
         float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
 
+
+
         switch (currentState)
         {
             case FSMStates.Idle:
-                UpdateIdleState();
+                UpdateIdleState(distanceToPlayer);
                 break;
             case FSMStates.Walk:
                 UpdateWalkState(distanceToPlayer);
@@ -65,7 +71,13 @@ public class npcAI : MonoBehaviour
             case FSMStates.Stop:
                 UpdateStopState();
                 break;
+            case FSMStates.Purr:
+                UpdatePurrState(distanceToPlayer);
+                break;
         }
+
+
+
 
 
         if (Input.GetMouseButtonDown(0))
@@ -83,17 +95,63 @@ public class npcAI : MonoBehaviour
         }
     }
 
+    void UpdatePurrState(float distanceToPlayer)
+    {
+        anim.SetInteger("animState", 0);
+        agent.ResetPath();
+        if (!isPurr) {
+        playPurrSound();
+
+        }
+
+        if (distanceToPlayer > idleDistance)
+        {
+            stopPurrSound();
+            currentState = FSMStates.Walk;
+        }
+  
+    }
+
+
+
     void Initialize()
     {
         currentState = FSMStates.Idle;
         FindNextPoint();
     }
 
-    void UpdateIdleState()
+    void UpdateIdleState(float distanceToPlayer)
     {
         anim.SetInteger("animState", 0);
         canWander = true;
-        currentState = FSMStates.Walk;
+        if (distanceToPlayer <= idleDistance)
+        {
+            currentState = FSMStates.Purr;
+        }
+        else if (distanceToPlayer > idleDistance)
+        {
+            currentState = FSMStates.Walk;
+        }
+    }
+
+    private void playPurrSound()
+    {
+        if (purr != null && audioSource != null)
+        {
+            audioSource.clip = purr;
+            audioSource.loop = true;
+            audioSource.Play();
+            isPurr = true;
+        }
+    }
+
+    private void stopPurrSound()
+    {
+        if (audioSource != null && audioSource.isPlaying && audioSource.clip == purr)
+        {
+            audioSource.Stop();
+            isPurr = false;
+        }
     }
 
 
@@ -106,6 +164,17 @@ public class npcAI : MonoBehaviour
 
     void UpdateWalkState(float distanceToPlayer)
     {
+
+        if (distanceToPlayer <= idleDistance)
+        {
+            currentState = FSMStates.Purr;
+            agent.ResetPath();
+            return;
+        }
+
+        anim.SetInteger("animState", 1);
+
+
         if (currentState != FSMStates.LeadPlayer)
         {
             currentState = FSMStates.Walk;
@@ -128,6 +197,7 @@ public class npcAI : MonoBehaviour
                 agent.SetDestination(nextDestination);
             }
         }
+
         if (reachedDestination)
         {
             currentState = FSMStates.Stop;
@@ -231,4 +301,6 @@ public class npcAI : MonoBehaviour
     {
         return reachedDestination;
     }
+
+
 }
