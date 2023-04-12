@@ -80,4 +80,6 @@ public class PauseMenuScript : MonoBehaviour
         isMenuOpen = false;
         settingsMenu.SetActive(false);
     }
+
+    
 }
