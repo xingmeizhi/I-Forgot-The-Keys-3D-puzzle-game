@@ -10,8 +10,13 @@ public class PauseMenuScript : MonoBehaviour
     public GameObject settingsMenu;
     public GameObject Tutorial;
     public GameObject pauseMenu;
+    public Slider sensitivitySlider;
 
     bool isMenuOpen = false;
+
+    void Start(){
+        sensitivitySlider.value = MouseLook.mouseSensitivity;
+    }
 
     // Update is called once per frame
     void Update()
@@ -56,6 +61,7 @@ public class PauseMenuScript : MonoBehaviour
     }
 
     public void ShowTutorial(){
+        Debug.Log("tutorial");
         if(isMenuOpen){
             CloseSettings();
         }
@@ -64,6 +70,7 @@ public class PauseMenuScript : MonoBehaviour
     }
 
     public void ShowSettings(){
+        Debug.Log("settings");
         if(isMenuOpen){
             CloseTutorial();
         }
@@ -81,5 +88,7 @@ public class PauseMenuScript : MonoBehaviour
         settingsMenu.SetActive(false);
     }
 
-    
+    public void ChangeMouseSensitivity(float newSensitivity){
+        MouseLook.mouseSensitivity = newSensitivity;
+    }
 }
