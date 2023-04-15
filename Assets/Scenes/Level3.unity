@@ -329,6 +329,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: wardrobe
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de6bf74007edc4d1093190d8a1867f38, type: 3}
+      propertyPath: m_TagString
+      value: lock
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de6bf74007edc4d1093190d8a1867f38, type: 3}
 --- !u!1 &2255362 stripped
@@ -347,8 +351,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.012852267, y: 0.024022339, z: 0.036299866}
-  m_Center: {x: 0, y: -0.0000000022859665, z: 0.018304057}
+  m_Size: {x: 0.015, y: 0.02402234, z: 0.04}
+  m_Center: {x: 0, y: 0, z: 0.018}
 --- !u!114 &2255364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1920,7 +1924,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 173335386}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.33, y: 2.1, z: -3.24}
+  m_LocalPosition: {x: -4.94, y: 2.1, z: -3.24}
   m_LocalScale: {x: 0.1, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2645,7 +2649,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1fee8ec68a4540bcb1a1f2db3511e6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  puzzle: {fileID: 0}
+  puzzle: {fileID: 907531182}
   beTrue:
   - {fileID: 791354221}
   - {fileID: 252402131}
@@ -3507,7 +3511,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4731187531571742929, guid: c497fc8c9a4ea42079d6fb65678df81d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731187531571742929, guid: c497fc8c9a4ea42079d6fb65678df81d, type: 3}
+      propertyPath: m_TagString
+      value: puzzle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c497fc8c9a4ea42079d6fb65678df81d, type: 3}
@@ -5084,7 +5092,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaf25ea7caa1742639198e2f8ef48a1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  puzzle: {fileID: 0}
+  puzzle: {fileID: 505517539}
   values:
   - {fileID: 1399117556}
   - {fileID: 977789168}
@@ -5597,15 +5605,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4527064727974542, guid: 00931e932c93cef48ae2d8cc87408c66, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.8195
+      value: -2.895
       objectReference: {fileID: 0}
     - target: {fileID: 4527064727974542, guid: 00931e932c93cef48ae2d8cc87408c66, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.65
+      value: 1.22
       objectReference: {fileID: 0}
     - target: {fileID: 4527064727974542, guid: 00931e932c93cef48ae2d8cc87408c66, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.21
+      value: 5.653
       objectReference: {fileID: 0}
     - target: {fileID: 4527064727974542, guid: 00931e932c93cef48ae2d8cc87408c66, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6048,6 +6056,10 @@ PrefabInstance:
     - target: {fileID: 7423606001264438290, guid: 8e9274738ff2c43af87b0bdf76c48349, type: 3}
       propertyPath: m_Name
       value: Medieval_Chest
+      objectReference: {fileID: 0}
+    - target: {fileID: 7423606001264438290, guid: 8e9274738ff2c43af87b0bdf76c48349, type: 3}
+      propertyPath: m_TagString
+      value: puzzle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e9274738ff2c43af87b0bdf76c48349, type: 3}
@@ -11243,7 +11255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27faa7f18ae76489998b4710f6aeb93b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  puzzle: {fileID: 0}
+  puzzle: {fileID: 965371279}
   buttons:
   - {fileID: 1682123469}
   - {fileID: 808017043}
