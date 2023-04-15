@@ -9,6 +9,7 @@ namespace DialogueSystem
 {
     public class DialogueLine : DialogueBaseClass
     {
+
         private Text textHolder;
 
         [Header ("Text Options")]
@@ -33,6 +34,11 @@ namespace DialogueSystem
         private void Start()
         {
             StartCoroutine(WriteText(input, textHolder, textColor, textFont, delay, sound, delayBetweenLines));
+        }
+
+        public bool Finished
+        {
+            get { return finished; }
         }
     }
 }

@@ -6,11 +6,11 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
 
-    public string level1, level2, level3;
+    public string CS1, level1, level2, level3;
 
     public void StartGame()
     {
-        SceneManager.LoadScene(level1);
+        SceneManager.LoadScene(CS1);
     }
 
     public void ContinueGame()

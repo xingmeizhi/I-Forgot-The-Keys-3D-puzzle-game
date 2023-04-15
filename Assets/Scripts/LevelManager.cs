@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using DialogueSystem;
 
 public class LevelManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class LevelManager : MonoBehaviour
     public Text timerText;
     public Text gameText;
     public string nextLevel;
+    public DialogueLine dialogueLine;
 
     public static bool isGameOver = false;
 
@@ -33,6 +35,11 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (dialogueLine != null && dialogueLine.Finished)
+        {
+            LoadNextLevel();
+        }
+
         if (!isGameOver)
         {
             if (countDown > 0)
@@ -85,13 +92,20 @@ public class LevelManager : MonoBehaviour
 
     void LoadNextLevel()
     {
-        audioSource.Play();
+        if(audioSource != null) {
+            audioSource.Play();
+        }
+
         SceneManager.LoadScene(nextLevel);
     }
 
     void LoadCurrentLevel()
     {
-        audioSource.Play();
+        if (audioSource != null)
+        {
+            audioSource.Play();
+        }
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

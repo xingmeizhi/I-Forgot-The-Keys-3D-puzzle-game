@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.3587269, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311915, g: 0.3807396, b: 0.35872662, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -11553,7 +11553,8 @@ MonoBehaviour:
   levelDuration: 180
   timerText: {fileID: 468336922}
   gameText: {fileID: 1164922381}
-  nextLevel: 
+  nextLevel: CS5
+  dialogueLine: {fileID: 0}
   bgm: {fileID: 8300000, guid: 293d439a7242d463aa6065e0acddaf4b, type: 3}
 --- !u!4 &1588510312
 Transform:

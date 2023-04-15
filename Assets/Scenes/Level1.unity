@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.3587269, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311915, g: 0.3807396, b: 0.35872662, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1081,7 +1081,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 180068728}
   m_LocalRotation: {x: 0.6137083, y: -0, z: -0, w: 0.78953284}
-  m_LocalPosition: {x: 29, y: 14, z: 50.823425}
+  m_LocalPosition: {x: 29, y: 13.82, z: 50.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3419,7 +3419,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh27376
+  m_Name: pb_Mesh54762
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6263,7 +6263,7 @@ Transform:
   - {fileID: 1648368525}
   - {fileID: 610099465}
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1554455876
 GameObject:
@@ -8869,7 +8869,8 @@ MonoBehaviour:
   levelDuration: 180
   timerText: {fileID: 1970373423}
   gameText: {fileID: 752294143}
-  nextLevel: Level2
+  nextLevel: CS2
+  dialogueLine: {fileID: 0}
   bgm: {fileID: 8300000, guid: 293d439a7242d463aa6065e0acddaf4b, type: 3}
 --- !u!82 &2119143371
 AudioSource:
