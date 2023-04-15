@@ -1,0 +1,11 @@
+Model Information:
+* title:	Antique Iron Safe
+* source:	https://sketchfab.com/3d-models/antique-iron-safe-196cf0d3d5094b50874dbf51064a7d3e
+* author:	pixelgrapher (https://sketchfab.com/pixelgrapher)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Antique Iron Safe" (https://sketchfab.com/3d-models/antique-iron-safe-196cf0d3d5094b50874dbf51064a7d3e) by pixelgrapher (https://sketchfab.com/pixelgrapher) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
