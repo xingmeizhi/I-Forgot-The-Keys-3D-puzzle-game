@@ -37,7 +37,7 @@ public class LevelManager : MonoBehaviour
     {
         if (dialogueLine != null && dialogueLine.Finished)
         {
-            LoadNextLevel();
+            Invoke("LoadNextLevel", 2);
         }
 
         if (!isGameOver)
