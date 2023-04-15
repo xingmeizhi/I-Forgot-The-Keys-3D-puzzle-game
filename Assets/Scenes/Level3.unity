@@ -7032,7 +7032,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3705028537381535112, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.218
+      value: -4.282
       objectReference: {fileID: 0}
     - target: {fileID: 3705028537381535112, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8076,26 +8076,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: bcb2c125df571435cb335683da72ec79, type: 3}
   m_PrefabInstance: {fileID: 1126880362}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1126880364
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1126880363}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e4aeba7eed3948f98836e96e04a76b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  puzzle: {fileID: 1490804830}
-  inside:
-  - {fileID: 1078424549}
-  solved: 0
-  player: {fileID: 0}
-  animator: {fileID: 0}
-  clip: {fileID: 0}
-  solveAudio: {fileID: 0}
 --- !u!65 &1126880365
 BoxCollider:
   m_ObjectHideFlags: 0
