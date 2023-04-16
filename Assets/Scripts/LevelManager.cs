@@ -27,8 +27,11 @@ public class LevelManager : MonoBehaviour
         isGameOver = false;
         countDown = levelDuration;
         audioSource = GetComponent<AudioSource>();
-        audioSource.clip = bgm;
-        audioSource.Play();
+        if (audioSource != null && bgm != null)
+        {
+            audioSource.clip = bgm;
+            audioSource.Play();
+        }
         SetTimerText();
     }
 
@@ -58,16 +61,25 @@ public class LevelManager : MonoBehaviour
 
     void SetTimerText()
     {
-        timerText.text = countDown.ToString("f2");
+        if (timerText != null)
+        {
+            timerText.text = countDown.ToString("f2");
+        }
     }
 
     public void LevelLost()
     {
         isGameOver = true;
-        gameText.text = "GAME OVER";
-        gameText.gameObject.SetActive(true);
-        gameText.color = Color.red;
-        audioSource.Stop();
+        if (gameText != null)
+        {
+            gameText.text = "GAME OVER";
+            gameText.gameObject.SetActive(true);
+            gameText.color = Color.red;
+        }
+        if (audioSource != null)
+        {
+            audioSource.Stop();
+        }
 
 
         Invoke("LoadCurrentLevel", 2);
@@ -77,10 +89,16 @@ public class LevelManager : MonoBehaviour
     public void LevelBeat()
     {
         isGameOver = true;
-        gameText.text = "YOU ESCAPE";
-        gameText.color = Color.green;
-        gameText.gameObject.SetActive(true);
-        audioSource.Stop();
+        if (gameText != null)
+        {
+            gameText.text = "YOU ESCAPE";
+            gameText.color = Color.green;
+            gameText.gameObject.SetActive(true);
+        }
+        if (audioSource != null)
+        {
+            audioSource.Stop();
+        }
 
         if (!string.IsNullOrEmpty(nextLevel))
         {

@@ -11807,7 +11807,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d34c019a205049f4977219032c3a462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelDuration: 180
+  levelDuration: 240
   timerText: {fileID: 468336922}
   gameText: {fileID: 1164922381}
   nextLevel: CS5
