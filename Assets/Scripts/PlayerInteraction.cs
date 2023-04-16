@@ -47,6 +47,11 @@ public class PlayerInteraction : MonoBehaviour
                     var cdPuzzle = hit.transform.gameObject.GetComponent<CDpuzzleonly>();
                     cdPuzzle.InteractedWith();
                 }
+                if (hit.collider.CompareTag("mirror"))
+                {
+                    Debug.Log("Mirror");
+                    FindObjectOfType<LevelManager>().LevelBeat();
+                }
             }
         }
     }

@@ -409,7 +409,7 @@ MonoBehaviour:
   levelDuration: 180
   timerText: {fileID: 0}
   gameText: {fileID: 0}
-  nextLevel: 
+  nextLevel: MainMenu
   dialogueLine: {fileID: 1361558925}
   bgm: {fileID: 0}
 --- !u!4 &837552595
