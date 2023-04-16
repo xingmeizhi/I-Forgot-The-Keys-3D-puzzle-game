@@ -15,6 +15,7 @@ public class MainMenu : MonoBehaviour
 
     public void ContinueGame()
     {
+        MouseLook.mouseSensitivity = PlayerPrefs.GetFloat("mouseSensitivity");
         if(PlayerPrefs.GetInt("currentLevel", 0) == 0)
         {
             SceneManager.LoadScene(level1);

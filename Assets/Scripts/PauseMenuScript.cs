@@ -90,5 +90,6 @@ public class PauseMenuScript : MonoBehaviour
 
     public void ChangeMouseSensitivity(float newSensitivity){
         MouseLook.mouseSensitivity = newSensitivity;
+        PlayerPrefs.SetFloat("mouseSensitivity", newSensitivity);
     }
 }

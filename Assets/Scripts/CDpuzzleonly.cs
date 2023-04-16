@@ -40,18 +40,7 @@ public class CDpuzzleonly : MonoBehaviour
     {
         Debug.Log("Interacted with puzzle");
 
-        if (player == null)
-        {
-            Debug.LogError("Player object not found");
-            return;
-        }
-
         npcAI npc = GameObject.FindGameObjectWithTag("cat").GetComponent<npcAI>();
-        if (npc == null)
-        {
-            Debug.LogError("npcAI component not found on player object");
-            return;
-        }
 
         if (!solved && npc.isCathere())
         {
@@ -65,7 +54,6 @@ public class CDpuzzleonly : MonoBehaviour
 
     public void Solved()
     {
-
         solved = true;
 
         if (animator != null)
